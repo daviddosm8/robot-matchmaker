@@ -66,9 +66,26 @@ export const findMatchingRobotArms = (requirements: UserRequirements): RobotArm[
     const directApplicationMatch = arm.applications.some(app => 
       app.toLowerCase() === requirements.application.toLowerCase()
     );
-    score += directApplicationMatch ? 15 : 
-             arm.applications.some(app => app.toLowerCase().includes(requirements.application.toLowerCase())) ? 10 :
-             requirements.application.toLowerCase().includes(arm.applications.some(app => app.toLowerCase())) ? 5 : 0;
+    
+    // Fix: Correctly check if the application is included in any of the arm's applications
+    // The issue was using a boolean result from .some() where a string was expected
+    const partialApplicationMatch = arm.applications.some(app => 
+      app.toLowerCase().includes(requirements.application.toLowerCase())
+    );
+    
+    const requirementIncludesApplication = requirements.application !== "" && 
+      arm.applications.some(app => 
+        requirements.application.toLowerCase().includes(app.toLowerCase())
+      );
+    
+    // Now properly add score based on match conditions
+    if (directApplicationMatch) {
+      score += 15;
+    } else if (partialApplicationMatch) {
+      score += 10;
+    } else if (requirementIncludesApplication) {
+      score += 5;
+    }
     
     return {
       ...arm,
