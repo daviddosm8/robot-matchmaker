@@ -93,7 +93,7 @@ const HeroSection = () => {
           </div>
         </div>
         
-        {/* Robot Arm Image */}
+        {/* Robot Arm Visualization - Removed placeholder text */}
         <div 
           className="mt-16 max-w-3xl mx-auto relative animate-float"
           style={{
@@ -102,9 +102,7 @@ const HeroSection = () => {
           }}
         >
           <div className="relative w-full aspect-[16/9] bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl overflow-hidden shadow-xl">
-            <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-              Robot Arm Illustration (placeholder)
-            </div>
+            {/* Empty space where the placeholder was previously */}
           </div>
           
           {/* Floating Details */}
