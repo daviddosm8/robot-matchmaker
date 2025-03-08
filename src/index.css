@@ -76,6 +76,10 @@
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-blue-600;
   }
+  
+  .text-gradient-blue {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-blue-700;
+  }
 
   .hover-scale {
     @apply transition-transform duration-300 hover:scale-[1.02];
@@ -87,6 +91,14 @@
 
   .reveal-animation.animated > * {
     @apply opacity-100 translate-y-0;
+  }
+  
+  .shadow-soft {
+    @apply shadow-[0_5px_15px_rgba(0,0,0,0.05)];
+  }
+  
+  .shadow-card {
+    @apply shadow-[0_8px_30px_rgba(0,0,0,0.08)];
   }
 }
 
@@ -154,4 +166,25 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: rgba(156, 163, 175, 0.5);
+}
+
+/* New animation for subtle pulse */
+@keyframes pulse-gentle {
+  0%, 100% {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-5px);
+  }
+}
+
+.animate-pulse-gentle {
+  animation: pulse-gentle 3s ease-in-out infinite;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
 }
