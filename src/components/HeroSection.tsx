@@ -93,30 +93,6 @@ const HeroSection = () => {
           </div>
         </div>
         
-        {/* Robot Arm Visualization - Removed placeholder text */}
-        <div 
-          className="mt-16 max-w-3xl mx-auto relative animate-float"
-          style={{
-            transform: 'translate3d(calc(var(--move-x, 0) * 0.5), calc(var(--move-y, 0) * 0.5), 0)',
-            transition: 'transform 0.2s cubic-bezier(0.33, 1, 0.68, 1)',
-          }}
-        >
-          <div className="relative w-full aspect-[16/9] bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl overflow-hidden shadow-xl">
-            {/* Empty space where the placeholder was previously */}
-          </div>
-          
-          {/* Floating Details */}
-          <div className="absolute -right-4 sm:right-4 top-4 glass-card p-3 rounded-lg shadow-lg animate-pulse-soft">
-            <div className="text-sm font-medium text-gray-800">Precision</div>
-            <div className="text-xs text-gray-600">±0.1mm accuracy</div>
-          </div>
-          
-          <div className="absolute -left-4 sm:left-4 bottom-4 glass-card p-3 rounded-lg shadow-lg animate-pulse-soft" style={{ animationDelay: '1s' }}>
-            <div className="text-sm font-medium text-gray-800">Speed</div>
-            <div className="text-xs text-gray-600">Up to 5m/s</div>
-          </div>
-        </div>
-        
         {/* Scroll Down Indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce opacity-70">
           <span className="text-xs font-medium text-gray-500">Scroll Down</span>
